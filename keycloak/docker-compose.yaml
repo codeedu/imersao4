@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  app:
+    image: jboss/keycloak:15.0.0
+    environment:
+      - KEYCLOAK_USER=admin
+      - KEYCLOAK_PASSWORD=admin
+      - KEYCLOAK_IMPORT=/tmp/realm-export.json
+      - DB_VENDOR=h2
+    volumes: 
+      - ./realm-export.json:/tmp/realm-export.json
+    ports:
+      - 8080:8080
