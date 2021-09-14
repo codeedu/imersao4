@@ -6,7 +6,7 @@
 
 Repositório do back-end das transações feito com Nest.js
 
-**Importante**: A aplicação do Apache Kafka, Keycloak deve estar rodando primeiro.
+**Importante**: A aplicação do Keycloak deve estar rodando primeiro.
 
 ## Rodar a aplicação
 
