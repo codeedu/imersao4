@@ -16,7 +16,7 @@ export function useAuthSwr(url: string, config?: SWRConfiguration) {
 
   useEffect(() => {
     if (error?.response?.status === 401) {
-      push("/login");
+      push("/logout");
     }
     if (error) {
       console.error(error);

@@ -6,9 +6,10 @@ services:
     environment:
       - KEYCLOAK_USER=admin
       - KEYCLOAK_PASSWORD=admin
-      - KEYCLOAK_IMPORT=/tmp/realm-export.json
+      #- KEYCLOAK_IMPORT=/tmp/realm-export.json
       - DB_VENDOR=h2
     volumes: 
-      - ./realm-export.json:/tmp/realm-export.json
+      #- ./realm-export.json:/tmp/realm-export.json
+      - ./.docker/keycloak:/opt/jboss/keycloak/standalone/data
     ports:
       - 8080:8080
