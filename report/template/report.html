@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Report</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+
+    <h2>Report: <b>Account: </b>{{ .AccountID }}</h2>
+    <p class="lead">From: <small class="text-muted">{{.InitDate}} to {{.EndDate}}</small></p>
+    <table class="table table-striped table-hover table-bordered ">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Category</th>
+            <th scope="col">Type</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{ range .Hits.Hits }}
+        <tr>
+            <td scope="row">{{.Source.Name}}</td>
+            <td>{{.Source.Category}}</td>
+            <td>{{.Source.Type}}</td>
+            <td>{{.Source.Amount}}</td>
+            <td>{{.Source.PaymentDate}}</td>
+        </tr>
+        {{ end }}
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
